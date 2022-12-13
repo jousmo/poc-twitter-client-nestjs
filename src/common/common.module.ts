@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { TwitterPostPublisher } from './providers/twitter-post-publisher';
-import { TwitterClientFactory } from './providers/twitter-client';
 import { HttpModule } from '@nestjs/axios';
+import { TwitterPostPublisher } from './providers/twitter-post-publisher';
+import { TwitterClientWrapper } from './providers/twitter-client-wrapper';
 @Module({
   imports: [HttpModule],
-  providers: [TwitterClientFactory, TwitterPostPublisher],
+  providers: [TwitterClientWrapper, TwitterPostPublisher],
   exports: [TwitterPostPublisher],
 })
 export class CommonModule {}

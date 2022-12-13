@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePostDto } from './dto/create-post.dto';
+import { CreatePostMediaDto } from './dto/create-post-media.dto';
 import { TwitterPostPublisher } from '../common/providers/twitter-post-publisher';
 
 @Injectable()
 export class PostsService {
   constructor(private readonly twitterPostPublisher: TwitterPostPublisher) {}
 
-  async create(createPostDto: CreatePostDto) {
-    await this.twitterPostPublisher.publish(createPostDto);
+  async createMedia(createPostMediaDto: CreatePostMediaDto) {
+    await this.twitterPostPublisher.publishMediaWrapper(createPostMediaDto);
   }
 }

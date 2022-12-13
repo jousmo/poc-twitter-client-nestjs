@@ -1,12 +1,12 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { PostsService } from './posts.service';
-import { CreatePostDto } from './dto/create-post.dto';
+import { CreatePostMediaDto } from './dto/create-post-media.dto';
 
-@Controller('posts')
+@Controller('publisher')
 export class PostsController {
   constructor(private readonly postService: PostsService) {}
-  @Post()
-  create(@Body() createPostDto: CreatePostDto) {
-    return this.postService.create(createPostDto);
+  @Post('wrapper/media')
+  createMedia(@Body() createPostMediaDto: CreatePostMediaDto) {
+    return this.postService.createMedia(createPostMediaDto);
   }
 }

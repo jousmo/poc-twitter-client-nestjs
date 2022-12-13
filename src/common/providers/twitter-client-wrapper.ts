@@ -4,7 +4,7 @@ import { TwitterApi } from 'twitter-api-v2';
 import config from '../../config/env.config';
 
 @Injectable()
-export class TwitterClientFactory {
+export class TwitterClientWrapper {
   private readonly twitterClient: TwitterApi;
   constructor(
     @Inject(config.KEY)
