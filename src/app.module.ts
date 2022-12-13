@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { JoiConfig } from './config/joi.config';
 import { PostsModule } from './posts/posts.module';
+import { CommonModule } from './common/common.module';
 import config from './config/env.config';
 
 @Module({
@@ -12,8 +13,7 @@ import config from './config/env.config';
       isGlobal: true,
     }),
     PostsModule,
+    CommonModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}

@@ -5,4 +5,8 @@ export class CreatePostDto {
   @IsNotEmpty()
   @MinLength(1)
   message: string;
+
+  @IsString()
+  @IsNotEmpty()
+  image: string;
 }
